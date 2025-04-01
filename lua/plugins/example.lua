@@ -153,6 +153,8 @@ return {
           "typescript",
           "vim",
           "yaml",
+          "http",
+          "graphql",
         },
       },
     },
