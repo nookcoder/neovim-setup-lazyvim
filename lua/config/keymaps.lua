@@ -26,3 +26,6 @@ end, { desc = "Toggle test summary" })
 keymap.set("n", "<leader>to", function()
   neotest.output.open({ enter = true })
 end, { desc = "Show test output" })
+
+-- DBUI
+keymap.set("n", "<leader>dd", "<cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>", { desc = "Open DBUI" })
