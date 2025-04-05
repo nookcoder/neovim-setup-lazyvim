@@ -8,6 +8,7 @@ local opts = { noremap = true, silent = true }
 
 keymap.set({ "n", "v" }, "<leader>/", "gcc", { remap = true, desc = "Toggle comment line" })
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk", noremap = true })
+keymap.set("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Neotest Keymaps
 local neotest = require("neotest")
