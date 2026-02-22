@@ -4,29 +4,14 @@
 
 -- Common Keymaps
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
+local map = vim.keymap.set
 
 keymap.set({ "n", "v" }, "<leader>/", "gcc", { remap = true, desc = "Toggle comment line" })
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk", noremap = true })
 keymap.set("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
--- Neotest Keymaps
-local neotest = require("neotest")
-keymap.set("n", "<leader>tt", function()
-  neotest.run.run()
-end, { desc = "Run nearest test" })
-
-keymap.set("n", "<leader>tf", function()
-  neotest.run.run(vim.fn.expand("%"))
-end, { desc = "Run test in file" })
-
-keymap.set("n", "<leader>ts", function()
-  neotest.summary.toggle()
-end, { desc = "Toggle test summary" })
-
-keymap.set("n", "<leader>to", function()
-  neotest.output.open({ enter = true })
-end, { desc = "Show test output" })
-
--- DBUI
-keymap.set("n", "<leader>dd", "<cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>", { desc = "Open DBUI" })
+map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
+map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
+map("n", "<leader>dd", function()
+	Snacks.terminal("lazydocker", { win = { style = "terminal" } })
+end, { desc = "LazyDocker (Docker 관리)" })
